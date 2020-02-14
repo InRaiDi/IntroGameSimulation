@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
         rBody.position = new Vector2(
             Mathf.Clamp(rBody.position.x, minX, maxX),
             Mathf.Clamp(rBody.position.y, minY, maxY)
+            
             );
 
 
