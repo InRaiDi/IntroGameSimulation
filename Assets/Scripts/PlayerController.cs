@@ -6,8 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float minX, maxX, minY, maxY;
+    public GameObject Laser;
+    public Transform laserSpawn;
+    public float fireRateDelay = 0.25f;
+
     private Rigidbody2D rBody;
-    
+    private float timer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +32,19 @@ public class PlayerController : MonoBehaviour
             Mathf.Clamp(rBody.position.y, minY, maxY)
             
             );
+    }
 
+    void Update() { 
+        //1. check user input
 
+         if (Input.GetAxis("Fire1") > 0 && timer > fireRateDelay)
+            {
+            // 2. create the object
+            GameObject gObj = Instantiate(Laser, laserSpawn.transform.position, laserSpawn.transform.rotation);
+            gObj.transform.Rotate(0, 0, -90);
+            timer = 0;
+            }
 
+        timer += Time.deltaTime;
     }
 }
