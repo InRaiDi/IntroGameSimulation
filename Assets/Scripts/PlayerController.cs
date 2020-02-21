@@ -34,17 +34,18 @@ public class PlayerController : MonoBehaviour
             );
     }
 
-    void Update() { 
+    void Update()
+    {
         //1. check user input
 
-         if (Input.GetAxis("Fire1") > 0 && timer > fireRateDelay)
-            {
+        if (Input.GetAxis("Fire1") > 0 && timer > fireRateDelay)
+        {
             // 2. create the object
             GameObject gObj = Instantiate(Laser, laserSpawn.transform.position, laserSpawn.transform.rotation);
             gObj.transform.Rotate(0, 0, -90);
             timer = 0;
-            }
+        }
 
         timer += Time.deltaTime;
-    }
+    }          
 }
