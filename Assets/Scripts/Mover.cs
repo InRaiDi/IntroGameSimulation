@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    // public var
+ 
     public float speed = 20;
 
-    // private var
     private Rigidbody2D rBody;
 
     void Start()

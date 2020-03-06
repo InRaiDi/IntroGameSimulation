@@ -11,7 +11,5 @@ public class Rotater : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         rBody.angularVelocity = Random.value*tumble;
     }
-
-    
-   
+ 
 }
